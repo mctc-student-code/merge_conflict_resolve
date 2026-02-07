@@ -5,8 +5,12 @@ import country_api
 def main():
     while True:
         code = input('Enter country code or press enter to quit ')
-        # TODO check code is 2 letters 
         # TODO end the loop if user presses enter
+
+        if len(code) != 2:
+            print('Enter a 2-letter code')
+            continue
+
         found, name, error = country_api.get_country_name(code)
         
         if found:
